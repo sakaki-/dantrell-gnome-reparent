@@ -58,6 +58,15 @@ With that done, you can then re-emerge @world to pick up the new USE flags etc:
 # emerge --deep --with-bdeps=y --newuse --update --ask --verbose @world
 ```
 Done!
+
+## Known Issues and Workarounds
+
+If you are moving to a `dantrell-gnome-reparent` profile from a _minimal_ profile (for example, `default/linux/amd64/13.0`, as might be the case when building out a fresh system), you may experience a circular dependency when attempting the above `@world` update. To resolve this, simply run:
+```
+# USE="-qt4 -qt5" emerge --ask --verbose --oneshot dev-util/cmake
+```
+and then proceed to update `@world` as usual. Don't worry, you will get the profile-appropriate version of `cmake` (re-)installed as part of this process too. (Thanks to [iemanuilov](https://github.com/iemanuilov) for reporting!)
+
 ## Maintainers
 
 * [sakaki](mailto:sakaki@deciban.com)
