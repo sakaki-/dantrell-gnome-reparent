@@ -61,11 +61,13 @@ Done!
 
 ## Known Issues and Workarounds
 
-If you are moving to a `dantrell-gnome-reparent` profile from a _minimal_ profile (for example, `default/linux/amd64/13.0`, as might be the case when building out a fresh system), you may experience a circular dependency when attempting the above `@world` update. To resolve this, simply run:
-```
-# USE="-qt4 -qt5" emerge --ask --verbose --oneshot dev-util/cmake
-```
-and then proceed to update `@world` as usual. Don't worry, you will get the profile-appropriate version of `cmake` (re-)installed as part of this process too. (Thanks to [iemanuilov](https://github.com/iemanuilov) for reporting!)
+The `dantrell-gnome` profiles turn on the `gtkstyle` USE flag by default. This flag is, however, **off** by default in the equivalent Gentoo GNOME profiles, and, as having it on can cause circular dependency loops when building out a fresh system, I have disabled it again in `dantrell-gnome-reparent`.
+
+If you like, it is a simple matter (once you have a working system) to set the flag where necessary via `/etc/portage/package.use`, and re-emerge any affected packages. This should not be an issue for most users.
+
+Because of this change, it is no longer necessary to do any `--oneshot` `emerge` steps when using either of the `dantrell-gnome-reparent` profiles.
+
+(Thanks to [iemanuilov](https://github.com/iemanuilov) for reporting!)
 
 ## Maintainers
 
