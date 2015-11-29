@@ -60,6 +60,17 @@ With that done, you can then re-emerge @world to pick up the new USE flags etc:
 # emerge --deep --with-bdeps=y --newuse --update --ask --verbose @world
 ```
 Done!
+
+## Known Issues and Workarounds
+
+The `dantrell-gnome` profiles turn on the `gtkstyle` USE flag by default. This flag is, however, **off** by default in the equivalent Gentoo GNOME profiles, and, as having it on can cause circular dependency loops when building out a fresh system, I have disabled it again in `dantrell-gnome-reparent`.
+
+If you like, it is a simple matter (once you have a working system) to set the flag where necessary via `/etc/portage/package.use`, and re-emerge any affected packages. This should not be an issue for most users.
+
+Because of this change, it is no longer necessary to do any `--oneshot` `emerge` steps when using either of the `dantrell-gnome-reparent` profiles.
+
+(Thanks to [iemanuilov](https://github.com/iemanuilov) for reporting!)
+
 ## Maintainers
 
 * [sakaki](mailto:sakaki@deciban.com)
