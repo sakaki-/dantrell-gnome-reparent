@@ -27,7 +27,7 @@ and put the following text in the file:
  
 location = /usr/local/portage/dantrell-gnome-reparent
 sync-type = git
-sync-uri = https://github.com/sakaki-/gentoo-b3-reparent.git
+sync-uri = https://github.com/sakaki-/dantrell-gnome-reparent.git
 priority = 200
 auto-sync = yes
 ```
@@ -49,7 +49,7 @@ Available profile symlink targets:
   [23]  dantrell-gnome:default/amd64/3.18
   [24]  dantrell-gnome-reparent:default/linux/amd64/13.0/desktop/gnome/3.14
   [25]  dantrell-gnome-reparent:default/linux/amd64/13.0/desktop/gnome/3.16
-  [246]  dantrell-gnome-reparent:default/linux/amd64/13.0/desktop/gnome/3.18
+  [26]  dantrell-gnome-reparent:default/linux/amd64/13.0/desktop/gnome/3.18
 ```
 Now you can set the the desired profile, for example:
 ```
