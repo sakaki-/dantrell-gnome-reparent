@@ -46,8 +46,10 @@ Available profile symlink targets:
   [21]  hardened/linux/uclibc/amd64
   [21]  dantrell-gnome:default/amd64/3.14 *
   [22]  dantrell-gnome:default/amd64/3.16
-  [23]  dantrell-gnome-reparent:default/linux/amd64/13.0/desktop/gnome/3.14
-  [24]  dantrell-gnome-reparent:default/linux/amd64/13.0/desktop/gnome/3.16
+  [23]  dantrell-gnome:default/amd64/3.18
+  [24]  dantrell-gnome-reparent:default/linux/amd64/13.0/desktop/gnome/3.14
+  [25]  dantrell-gnome-reparent:default/linux/amd64/13.0/desktop/gnome/3.16
+  [246]  dantrell-gnome-reparent:default/linux/amd64/13.0/desktop/gnome/3.18
 ```
 Now you can set the the desired profile, for example:
 ```
