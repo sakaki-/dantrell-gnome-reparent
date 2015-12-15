@@ -1,0 +1,36 @@
+Title: Profile migration (important: please read)
+Author: sakaki <sakaki@deciban.com>
+Content-Type: text/plain
+Posted: 2015-12-15
+Revision: 1
+News-Item-Format: 1.0
+
+Good news! Dantrell B., the GNOME patchset's primary author, is now providing
+'extended' profiles for each of GNOME 3.14, 3.16 and 3.18. These profiles
+provide a close USE-flag match to their familiar Gentoo desktop/gnome
+cousins, and (happily!) make the dantrell-gnome-reparent profiles redundant.
+
+As such, users of any of the dantrell-gnome-reparent profiles should migrate
+to the corresponding 'extended' Dantrell profile as soon as possible.
+
+For example, if you were using
+dantrell-gnome-reparent:default/linux/amd64/13.0/desktop/gnome/3.14, you
+should sync all your overlays, then issue:
+
+# eselect profile set "dantrell-gnome:default/amd64/3.14/extended"
+# emerge --ask --verbose --deep --with-bdeps=y --newuse --update @world
+
+You may find the following links useful:
+
+https://github.com/dantrell/gentoo-project-gnome-without-systemd
+https://wiki.gentoo.org/wiki/GNOME/GNOME_Without_systemd
+
+Many thanks to everyone who has used the 'reparent' overlays and
+provided feedback!
+
+Please note that while I will leave dantrell-gnome-reparent up on GitHub
+for historical interest, as of now I am no longer actively developing it.
+
+Any questions, feel free to email me!
+
+sakaki <sakaki@deciban.com>
