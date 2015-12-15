@@ -4,6 +4,15 @@ Dantrell B.'s [GNOME without systemd](https://github.com/dantrell/gentoo-project
 
 This (trivial) overlay corrects the issue, by providing new profiles that inherit from _both_ Dantrell's variants _and_ `default/linux/<arch>/13.0/desktop/gnome`, and which may be used in place of the Dantrell profiles on Gentoo.
 
+> **News update, 15 Dec 2015:** Dantrell is now providing 'extended' profiles (for GNOME 3.14, 3.16 and 3.18), which provide a close USE-flag match to Gentoo's standard GNOME profiles, and (happily!) make these 'reparent' profiles redundant. Accordingly, users should migrate to the corresponding 'extended' Dantrell profile as soon as possible. For example, if you were using **dantrell-gnome-reparent:default/linux/amd64/13.0/desktop/gnome/3.14**, proceed as follows (after sync-ing all your overlays):
+
+```
+# eselect profile set "dantrell-gnome:default/amd64/3.14/extended"
+# emerge --ask --verbose --deep --with-bdeps=y --newuse --update @world
+```
+
+> I will leave **dantrell-gnome-reparent** up on GitHub for historical interest, but please note I am no longer actively developing it.
+
 ## Prerequisites
 
 It is assumed that you have already installed Dantrell's overlays and are using one of the profiles it provides. Instructions for setting this up on Gentoo may be found [here](https://wiki.gentoo.org/wiki/GNOME/GNOME_Without_systemd).
